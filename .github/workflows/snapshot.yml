@@ -1,0 +1,37 @@
+name: price snapshot
+
+on:
+  schedule:
+    - cron: "0 6,21 * * *"   # 07:00 and 19:00 Swedish time (UTC+1 in winter)
+  workflow_dispatch:           # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write              # needed to commit the data back
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Take snapshot
+        run: python -m pricewatch.snapshot basket.csv --out data
+
+      - name: Commit data
+        if: always()           # commit whatever was saved, even if some shops failed
+        run: |
+          git config user.name "pricewatch-bot"
+          git config user.email "pricewatch-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "snapshot $(TZ=Europe/Stockholm date +'%Y-%m-%d %H:%M')"
+          git pull --rebase
+          git push

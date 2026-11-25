@@ -1,0 +1,530 @@
+[
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/barnspel/den-forsvunna-diamanten.html",
+    "fetched_at": "2026-11-25T22:19:08+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Den Försvunna Diamanten",
+    "price": 299.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350108149",
+    "sku": "38010814"
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "SkaViLeka",
+    "url": "https://skavileka.se/bradspel-sallskapsspel/familjespel/den-forsvunna-diamanten/",
+    "fetched_at": "2026-11-25T22:19:11+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "Jollyroom",
+    "url": "https://www.jollyroom.se/leksaker/spel-pussel/sallskapsspel/alga-spel-den-forsvunna-diamanten",
+    "fetched_at": "2026-11-25T22:19:13+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Alga Spel Den Försvunna Diamanten",
+    "price": 299.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": null,
+    "sku": null
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "Avea.se",
+    "url": "https://avea.se/prylar/spel/den-forsvunna-diamanten",
+    "fetched_at": "2026-11-25T22:19:15+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "Shopping4net",
+    "url": "https://www.shopping4net.se/Leksaker/Spel-Pussel/Saellskapsspel/Den-foersvunna-Diamanten.htm",
+    "fetched_at": "2026-11-25T22:19:17+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/491-bradspel/39203-den-forsvunna-diamanten-se",
+    "fetched_at": "2026-11-25T22:19:20+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Den Försvunna Diamanten (SE)",
+    "price": 365.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350108149",
+    "sku": 39203
+  },
+  {
+    "game": "Den Försvunna Diamanten",
+    "shop": "THK produkter",
+    "url": "https://www.thk.nu/skola-hobby/lekmaterial/spel/spel-fran-7-ar/den-forsvunna-diamanten-fran-7ar/",
+    "fetched_at": "2026-11-25T22:19:22+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "UNO",
+    "shop": "Buyersclub",
+    "url": "https://buyersclub.se/produkt/mattel-games-uno",
+    "fetched_at": "2026-11-25T22:19:25+01:00",
+    "status": "error",
+    "error": "HTTP 403"
+  },
+  {
+    "game": "UNO",
+    "shop": "Bookhero",
+    "url": "https://bookhero.se/p/ovrigt-inom-leksaker/sortering/uno-2",
+    "fetched_at": "2026-11-25T22:19:27+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "UNO",
+    "shop": "Terratide",
+    "url": "https://terratide.se/sv-se/brettspill/115812/uno-kortspel-klassikern-f%C3%B6r-hela-familjen",
+    "fetched_at": "2026-11-25T22:19:30+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Uno Kortspel",
+    "price": 161.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": null,
+    "sku": "115812"
+  },
+  {
+    "game": "UNO",
+    "shop": "Leksaksaffären",
+    "url": "https://leksaksaffaren.com/kortspel/3229-uno-basic-746775036744.html",
+    "fetched_at": "2026-11-25T22:19:32+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Manatorsk",
+    "url": "https://manatorsk.com/products/drakborgen",
+    "fetched_at": "2026-11-25T22:19:36+01:00",
+    "status": "error",
+    "error": "HTTP 429"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Playoteket",
+    "url": "https://playoteket.com/braedspel/17519-drakborgen-7312350105032.html",
+    "fetched_at": "2026-11-25T22:19:38+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Drakborgen",
+    "price": 375.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350105032",
+    "sku": "38010503"
+  },
+  {
+    "game": "Monopol",
+    "shop": "Plusshop",
+    "url": "https://plusshop.se/hasbro-monopoly-bradspel",
+    "fetched_at": "2026-11-25T22:19:41+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "UNO",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/kortspel/uno.html",
+    "fetched_at": "2026-11-25T22:19:44+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "UNO",
+    "price": 99.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "746775036744",
+    "sku": "51997"
+  },
+  {
+    "game": "Monopol",
+    "shop": "SkaViLeka",
+    "url": "https://skavileka.se/bradspel-sallskapsspel/familjespel/monopoly-classic-se/",
+    "fetched_at": "2026-11-25T22:19:44+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "UNO",
+    "shop": "Jollyroom",
+    "url": "https://www.jollyroom.se/leksaker/spel-pussel/kortspel-memory/uno-kortspel",
+    "fetched_at": "2026-11-25T22:19:44+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "UNO Kortspel",
+    "price": 159.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": null,
+    "sku": null
+  },
+  {
+    "game": "UNO",
+    "shop": "Avea.se",
+    "url": "https://avea.se/prylar/spel/uno-kortspel",
+    "fetched_at": "2026-11-25T22:19:45+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/3246-bluff/188412-drakborgen-se",
+    "fetched_at": "2026-11-25T22:19:45+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Drakborgen (SE)",
+    "price": 395.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350105032",
+    "sku": 188412
+  },
+  {
+    "game": "Ubongo",
+    "shop": "THK produkter",
+    "url": "https://www.thk.nu/skola-hobby/lekmaterial/spel/spel-fran-8-ar/ubongo-fran-8ar/",
+    "fetched_at": "2026-11-25T22:19:46+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "På spåret",
+    "shop": "Buyersclub",
+    "url": "https://buyersclub.se/quiz/pa-sparet",
+    "fetched_at": "2026-11-25T22:19:46+01:00",
+    "status": "error",
+    "error": "HTTP 403"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Bookhero",
+    "url": "https://bookhero.se/p/sallskapsspel/bradspel/drakborgen",
+    "fetched_at": "2026-11-25T22:19:46+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Bondespelet",
+    "shop": "Terratide",
+    "url": "https://terratide.se/sv-se/brettspill/167669/bondespelet-br%C3%A4dspel-svensk-utg%C3%A5va",
+    "fetched_at": "2026-11-25T22:19:48+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Bondespelet Brädspel",
+    "price": 348.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350109023",
+    "sku": "167669"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Leksaksaffären",
+    "url": "https://leksaksaffaren.com/barnspel/36668-drakborgen-7312350105032.html",
+    "fetched_at": "2026-11-25T22:19:48+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "Manatorsk",
+    "url": "https://manatorsk.com/en/products/bg-terraformingmarsterraformingmars",
+    "fetched_at": "2026-11-25T22:19:49+01:00",
+    "status": "error",
+    "error": "HTTP 429"
+  },
+  {
+    "game": "På spåret",
+    "shop": "Playoteket",
+    "url": "https://playoteket.com/braedspel/10430-pa-sparet-7070398103464.html",
+    "fetched_at": "2026-11-25T22:19:49+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "På Spåret",
+    "price": 499.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7070398103464",
+    "sku": "38010375"
+  },
+  {
+    "game": "Drakborgen",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/strategispel/drakborgen.html",
+    "fetched_at": "2026-11-25T22:19:50+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "SkaViLeka",
+    "url": "https://skavileka.se/bradspel-sallskapsspel/vuxenspel/terraforming-mars-en/",
+    "fetched_at": "2026-11-25T22:19:50+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Bondespelet",
+    "shop": "Jollyroom",
+    "url": "https://www.jollyroom.se/leksaker/spel-pussel/sallskapsspel/alga-bondespelet",
+    "fetched_at": "2026-11-25T22:19:50+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Alga Bondespelet",
+    "price": 379.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": null,
+    "sku": null
+  },
+  {
+    "game": "Ubongo",
+    "shop": "Avea.se",
+    "url": "https://avea.se/prylar/spel/ubongo",
+    "fetched_at": "2026-11-25T22:19:51+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Bondespelet",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/491-bradspel/27649-bondespelet-se",
+    "fetched_at": "2026-11-25T22:19:51+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Bondespelet (SE)",
+    "price": 349.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7312350109023",
+    "sku": 27649
+  },
+  {
+    "game": "Monopol",
+    "shop": "THK produkter",
+    "url": "https://www.thk.nu/skola-hobby/lekmaterial/spel/spel-monopol-fran-8ar/",
+    "fetched_at": "2026-11-25T22:19:51+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Smart10",
+    "shop": "Buyersclub",
+    "url": "https://buyersclub.se/produkt/peliko-spel-smart10",
+    "fetched_at": "2026-11-25T22:19:51+01:00",
+    "status": "error",
+    "error": "HTTP 403"
+  },
+  {
+    "game": "Monopol",
+    "shop": "Bookhero",
+    "url": "https://bookhero.se/p/sallskapsspel/bradspel/spel-monopol",
+    "fetched_at": "2026-11-25T22:19:52+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "På spåret",
+    "shop": "Terratide",
+    "url": "https://terratide.se/sv-se/brettspill/167661/p%C3%A5-sp%C3%A5ret-br%C3%A4dspel-svensk-utg%C3%A5va",
+    "fetched_at": "2026-11-25T22:19:53+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "På spåret Brädspel",
+    "price": 448.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7070398103464",
+    "sku": "167661"
+  },
+  {
+    "game": "Bondespelet",
+    "shop": "Leksaksaffären",
+    "url": "https://leksaksaffaren.com/braedspel/37500-alga-bondespelet-se-7312350109023.html",
+    "fetched_at": "2026-11-25T22:19:53+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "Playoteket",
+    "url": "https://playoteket.com/braedspel/8846-terraforming-mars-696859265808.html",
+    "fetched_at": "2026-11-25T22:19:54+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Terraforming Mars",
+    "price": 699.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "696859265808",
+    "sku": "FRY6580"
+  },
+  {
+    "game": "Bondespelet",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/familjespel/bondespelet.html",
+    "fetched_at": "2026-11-25T22:19:55+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Smart10",
+    "shop": "SkaViLeka",
+    "url": "https://skavileka.se/bradspel-sallskapsspel/fragesport-kunskapsspel/smart-10-se/",
+    "fetched_at": "2026-11-25T22:19:55+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Smart10",
+    "shop": "Jollyroom",
+    "url": "https://www.jollyroom.se/leksaker/spel-pussel/sallskapsspel/peliko-smart-10",
+    "fetched_at": "2026-11-25T22:19:55+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Peliko Smart 10 Sällskapsspel",
+    "price": 289.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": null,
+    "sku": null
+  },
+  {
+    "game": "Ubongo",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/3228-bluff/60522-ubongo-en",
+    "fetched_at": "2026-11-25T22:19:56+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Ubongo (EN)",
+    "price": 449.0,
+    "currency": "SEK",
+    "availability": "LimitedAvailability",
+    "gtin": "814743011595",
+    "sku": 60522
+  },
+  {
+    "game": "Smart10",
+    "shop": "Bookhero",
+    "url": "https://bookhero.se/p/sallskapsspel/kunskapsspel/spel-smart10",
+    "fetched_at": "2026-11-25T22:19:56+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Monopol",
+    "shop": "Terratide",
+    "url": "https://terratide.se/sv-se/brettspill/164114/monopoly-br%C3%A4dspel-svensk-2025-utg%C3%A5va",
+    "fetched_at": "2026-11-25T22:19:58+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Monopoly Brädspel - Svensk",
+    "price": 438.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "5010996302359",
+    "sku": "164114"
+  },
+  {
+    "game": "På spåret",
+    "shop": "Leksaksaffären",
+    "url": "https://leksaksaffaren.com/fragesport/801-alga-pa-sp-ret-se-7070398103464.html",
+    "fetched_at": "2026-11-25T22:19:58+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "På spåret",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/festspel/pa-sparet.html",
+    "fetched_at": "2026-11-25T22:19:59+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "På Spåret",
+    "price": 359.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "7070398103464",
+    "sku": "38010375"
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/3228-bluff/102815-terraforming-mars-se",
+    "fetched_at": "2026-11-25T22:19:59+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Terraforming Mars (SE)",
+    "price": 519.0,
+    "currency": "SEK",
+    "availability": "InStock",
+    "gtin": "6430018273976",
+    "sku": 102815
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "Terratide",
+    "url": "https://terratide.se/sv-se/bradspel/strategi/terraforming-mars",
+    "fetched_at": "2026-11-25T22:20:00+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Ubongo",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/familjespel/ubongo.html",
+    "fetched_at": "2026-11-25T22:20:00+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Smart10",
+    "shop": "Alphaspel",
+    "url": "https://alphaspel.se/3246-bluff/307581-smart10-original-se",
+    "fetched_at": "2026-11-25T22:20:01+01:00",
+    "status": "ok",
+    "error": null,
+    "name": "Smart10 Original (SE)",
+    "price": 319.0,
+    "currency": "SEK",
+    "availability": "BackOrder",
+    "gtin": "6416550860294",
+    "sku": 307581
+  },
+  {
+    "game": "Terraforming Mars",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/spelserier/terraforming-mars/terraforming-mars-swe.html",
+    "fetched_at": "2026-11-25T22:20:02+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  },
+  {
+    "game": "Smart10",
+    "shop": "Spelexperten",
+    "url": "https://www.spelexperten.com/sallskapsspel/spelserier/smart-10/smart-10.html",
+    "fetched_at": "2026-11-25T22:20:03+01:00",
+    "status": "error",
+    "error": "no JSON-LD Product found on page"
+  }
+]
