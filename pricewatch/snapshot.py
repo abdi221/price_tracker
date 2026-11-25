@@ -21,11 +21,12 @@ import urllib.error
 import urllib.request
 import urllib.robotparser
 from datetime import datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
-CONTACT = "abdifatahali22@gmail.com" 
+CONTACT = "your-email@example.com"  # <-- put your real email here
 USER_AGENT = f"pricewatch/0.1 (+mailto:{CONTACT})"
 DELAY_SECONDS = 2.0
 TIMEOUT_SECONDS = 20
@@ -44,13 +45,28 @@ def _wait_for(host: str) -> None:
     _last_request[host] = time.monotonic()
 
 
-def _get(url: str) -> str:
+MAX_RETRY_WAIT = 30  # seconds; a shop asking us to wait longer than this is skipped this run
+
+
+def _get(url: str, retry_on_429: bool = True) -> str:
     host = urlparse(url).netloc
     _wait_for(host)
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Language": "sv-SE,sv;q=0.9"})
-    with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
-        charset = resp.headers.get_content_charset() or "utf-8"
-        return resp.read().decode(charset, errors="replace")
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
+            charset = resp.headers.get_content_charset() or "utf-8"
+            return resp.read().decode(charset, errors="replace")
+    except urllib.error.HTTPError as e:
+        # 429 = "slow down". Wait as long as the shop asks (within reason) and try once more.
+        if e.code == 429 and retry_on_429:
+            try:
+                wait = float(e.headers.get("Retry-After", "10"))
+            except ValueError:
+                wait = 10.0
+            if wait <= MAX_RETRY_WAIT:
+                time.sleep(wait)
+                return _get(url, retry_on_429=False)
+        raise
 
 
 def robots_allows(url: str) -> bool:
@@ -116,10 +132,72 @@ def _first_offer(offers):
     return offers or {}
 
 
+class _MarkupParser(HTMLParser):
+    """Collects microdata (itemprop=...) and meta tags (og:/product:) as a fallback to JSON-LD."""
+
+    WANTED = {"name", "price", "pricecurrency", "availability", "gtin13", "gtin", "sku"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.found: dict[str, str] = {}
+        self._capture: str | None = None
+
+    def handle_starttag(self, tag, attrs):
+        a = {k.lower(): (v or "") for k, v in attrs}
+        if tag == "meta" and a.get("property", "").lower() in META_KEYS and a.get("content"):
+            self.found.setdefault("meta:" + META_KEYS[a["property"].lower()], a["content"])
+        prop = a.get("itemprop", "").lower()
+        if prop in self.WANTED and ("microdata:" + prop) not in self.found:
+            value = a.get("content") or a.get("href")
+            if value:
+                self.found["microdata:" + prop] = value
+            else:
+                self._capture = prop   # value is the element's text
+
+    def handle_data(self, data):
+        if self._capture and data.strip():
+            self.found.setdefault("microdata:" + self._capture, data.strip())
+            self._capture = None
+
+
+META_KEYS = {
+    "product:price:amount": "price", "og:price:amount": "price",
+    "product:price:currency": "pricecurrency", "og:price:currency": "pricecurrency",
+    "og:title": "name", "product:availability": "availability",
+}
+
+
+def _from_markup(html: str) -> dict | None:
+    p = _MarkupParser()
+    try:
+        p.feed(html)
+    except Exception:
+        return None
+    for source in ("microdata", "meta"):
+        f = {k.split(":", 1)[1]: v for k, v in p.found.items() if k.startswith(source + ":")}
+        price = _to_price(re.sub(r"[^\d.,]", "", f.get("price", "")) or None)
+        if price is not None:
+            return {
+                "name": f.get("name"),
+                "price": price,
+                "currency": f.get("pricecurrency"),
+                "availability": f.get("availability", "").rsplit("/", 1)[-1] or None,
+                "gtin": f.get("gtin13") or f.get("gtin"),
+                "sku": f.get("sku"),
+                "source": source,
+            }
+    return None
+
+
 def parse_product(html: str) -> dict | None:
+    return _from_jsonld(html) or _from_markup(html)
+
+
+def _from_jsonld(html: str) -> dict | None:
     for raw in _LD_RE.findall(html):
         try:
-            data = json.loads(raw.strip())
+            # strict=False accepts raw line breaks inside strings, which many shops output
+            data = json.loads(raw.strip(), strict=False)
         except json.JSONDecodeError:
             continue
         for node in _walk(data):
@@ -138,6 +216,7 @@ def parse_product(html: str) -> dict | None:
                 "availability": availability,
                 "gtin": str(gtin) if gtin else None,
                 "sku": node.get("sku"),
+                "source": "jsonld",
             }
     return None
 
@@ -155,14 +234,24 @@ def read_basket(path: Path) -> list[dict]:
     return basket
 
 
-def snapshot_one(item: dict) -> dict:
+def _save_debug(debug_dir: Path | None, item: dict, html: str) -> None:
+    if debug_dir is None:
+        return
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    name = re.sub(r"[^\w-]+", "_", f"{item['shop']}-{item['game']}").strip("_")
+    (debug_dir / f"{name}.html").write_text(html, encoding="utf-8")
+
+
+def snapshot_one(item: dict, debug_dir: Path | None = None) -> dict:
     result = {**item, "fetched_at": datetime.now(TZ).isoformat(timespec="seconds"), "status": "ok", "error": None}
     try:
         if not robots_allows(item["url"]):
             return {**result, "status": "blocked", "error": "robots.txt disallows this URL"}
-        product = parse_product(_get(item["url"]))
+        html = _get(item["url"])
+        product = parse_product(html)
         if product is None:
-            return {**result, "status": "error", "error": "no JSON-LD Product found on page"}
+            _save_debug(debug_dir, item, html)
+            return {**result, "status": "error", "error": "no price found (JSON-LD, microdata or meta)"}
         if product["price"] is None:
             return {**result, **product, "status": "error", "error": "Product found but no price"}
         return {**result, **product}
@@ -176,6 +265,8 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("basket", type=Path)
     ap.add_argument("--out", type=Path, default=Path("data"))
+    ap.add_argument("--debug", type=Path, default=None,
+                    help="folder to save the HTML of pages where no price was found")
     args = ap.parse_args(argv)
 
     basket = read_basket(args.basket)
@@ -195,10 +286,11 @@ def main(argv=None) -> int:
 
     results = []
     for i, item in enumerate(ordered, 1):
-        r = snapshot_one(item)
+        r = snapshot_one(item, args.debug)
         results.append(r)
         price = f"{r['price']:.0f} {r.get('currency') or ''}" if r.get("price") is not None else "-"
-        print(f"[{i:>3}/{len(ordered)}] {r['status']:<7} {r['shop'][:15]:<15} {r['game'][:25]:<25} {price:<10} {r['error'] or ''}")
+        info = r["error"] or r.get("source", "")
+        print(f"[{i:>3}/{len(ordered)}] {r['status']:<7} {r['shop'][:15]:<15} {r['game'][:25]:<25} {price:<10} {info}")
 
     now = datetime.now(TZ)
     out_file = args.out / now.strftime("%Y-%m-%d") / f"{now.strftime('%H%M')}.json"
