@@ -2,7 +2,7 @@ name: price snapshot
 
 on:
   schedule:
-    - cron: "0 6,20 * * *"   # 07:00 and 19:00 Swedish time (UTC+1 in winter)
+    - cron: "17 6,20 * * *" # 07:17 and 21:17 Swedish time (UTC+1 in winter)
   workflow_dispatch:           # adds a "Run workflow" button for manual runs
 
 permissions:
